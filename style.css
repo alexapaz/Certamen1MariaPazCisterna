@@ -185,11 +185,9 @@ body {
     transition: 0.3s;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-}
+.service-card:hover { transform: translateY(-5px); }
 
-/* --- ESTILOS COMMIT 4: Galería de Proyectos (Grid) --- */
+/* --- Galería de Proyectos --- */
 .projects-container {
     max-width: 1000px;
     margin: 0 auto 80px auto;
@@ -198,7 +196,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas como pide la pauta */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -209,40 +207,17 @@ body {
     transition: 0.3s;
 }
 
-.project-item:hover {
-    border-color: #8a2be2;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
-}
+.project-item:hover { border-color: #8a2be2; }
 
 .project-item img {
     width: 100%;
-    height: auto;
-    display: block;
     filter: grayscale(50%);
     transition: 0.5s;
 }
 
-.project-item:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
+.project-item:hover img { filter: grayscale(0%); transform: scale(1.05); }
 
-.project-item figcaption {
-    padding: 20px;
-}
-
-.project-item h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
-.project-item p {
-    color: #888;
-    font-size: 0.85em;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
+.project-item figcaption { padding: 20px; }
 
 .repo-link {
     color: #8a2be2;
@@ -252,6 +227,69 @@ body {
     text-transform: uppercase;
 }
 
-.repo-link:hover {
-    text-decoration: underline;
+/* --- ESTILOS COMMIT 5: Contacto y Footer --- */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 80px 20px;
+}
+
+.contact-wrapper {
+    background-color: #161616;
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #8a2be2;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    background-color: #0a0a0a;
+    border: 1px solid #333;
+    color: #fff;
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #8a2be2;
+}
+
+.submit-btn {
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover { background-color: #6a1bb2; }
+
+.main-footer {
+    background-color: #121212;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.main-footer p {
+    color: #666;
+    font-size: 0.8em;
+    margin-bottom: 10px;
 }
