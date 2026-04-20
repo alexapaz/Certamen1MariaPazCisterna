@@ -1,4 +1,4 @@
-/* --- Reset y Estilos Globales --- */
+/* reset global: quita márgenes por defecto y ajusta el tamaño de las cajas */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +7,11 @@
 
 body {
     background-color: #0a0a0a;
-    font-family: 'Georgia', serif;
+    font-family: 'georgia', serif;
     color: #e0e0e0;
 }
 
-/* --- Navegación --- */
+/* navegación: usa flexbox para centrar los enlaces y dar espacio */
 .main-nav {
     background-color: #121212;
     padding: 20px 0;
@@ -39,14 +39,14 @@ body {
     text-shadow: 0 0 8px #8a2be2;
 }
 
-/* --- Hero Section --- */
+/* hero section: usa flexbox para poner la foto y el texto en paralelo */
 .hero-container {
     display: flex;
     min-height: 80vh;
 }
 
 .profile-sidebar {
-    flex: 0 0 35%;
+    flex: 0 0 35%; /* la columna de la foto ocupa el 35% del ancho */
     background-color: #161616;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ body {
     height: 265px;
     border-radius: 50%;
     border: 3px solid #333;
-    filter: grayscale(100%);
+    /* se eliminó el filtro grayscale para que la foto se vea a color */
     object-fit: cover;
     margin-bottom: 20px;
 }
@@ -79,7 +79,7 @@ body {
 }
 
 .hero-content {
-    flex: 1;
+    flex: 1; /* el texto toma el resto del espacio */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,7 +103,7 @@ body {
     letter-spacing: 4px;
 }
 
-/* --- Secciones Generales --- */
+/* secciones generales: estilos básicos para títulos y rellenos */
 .main-content {
     padding: 60px 0;
     background-color: #0d0d0d;
@@ -117,7 +117,7 @@ body {
     display: inline-block;
 }
 
-/* --- Sobre Mí --- */
+/* sobre mí: usa flexbox para separar el texto de los intereses */
 .about-container {
     max-width: 1000px;
     margin: 0 auto 80px auto;
@@ -141,7 +141,7 @@ body {
     border-bottom: 1px dotted #222;
 }
 
-/* --- Habilidades y Servicios --- */
+/* habilidades y servicios: diseño de tablas y tarjetas con flexbox */
 .skills-services-container {
     max-width: 1000px;
     margin: 0 auto 80px auto;
@@ -150,7 +150,7 @@ body {
 
 .table-wrapper {
     margin-bottom: 40px;
-    overflow-x: auto; /* Para tablas en móvil */
+    overflow-x: auto;
 }
 
 .skills-table {
@@ -186,7 +186,9 @@ body {
     transition: 0.3s;
 }
 
-/* --- Galería de Proyectos --- */
+.service-card:hover { transform: translateY(-5px); }
+
+/* proyectos: usa css grid para crear una cuadrícula de 3 columnas iguales */
 .projects-container {
     max-width: 1000px;
     margin: 0 auto 80px auto;
@@ -226,7 +228,7 @@ body {
     text-transform: uppercase;
 }
 
-/* --- Contacto y Footer --- */
+/* contacto y footer: estilos para el formulario y el pie de página */
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
@@ -282,53 +284,19 @@ body {
     margin-bottom: 10px;
 }
 
-/* --- COMMIT 6: DISEÑO RESPONSIVO (Media Queries) --- */
+/* diseño responsivo: reglas que se activan según el ancho de la pantalla */
 @media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-    }
-
-    .profile-sidebar {
-        flex: 1;
-        border-right: none;
-        border-bottom: 2px solid #1a1a1a;
-        padding: 40px 20px;
-    }
-
-    .hero-content {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    .hero-name {
-        font-size: 3.2em;
-    }
-
-    .about-container, .services-grid {
-        flex-direction: column;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr 1fr; /* 2 columnas en tablets */
-        gap: 15px;
-    }
-
-    .main-nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+    .hero-container { flex-direction: column; }
+    .profile-sidebar { flex: 1; border-right: none; border-bottom: 2px solid #1a1a1a; padding: 40px 20px; }
+    .hero-content { padding: 40px 20px; text-align: center; }
+    .hero-name { font-size: 3.2em; }
+    .about-container, .services-grid { flex-direction: column; }
+    .projects-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .main-nav ul { gap: 15px; flex-wrap: wrap; }
 }
 
 @media (max-width: 480px) {
-    .hero-name {
-        font-size: 2.5em;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr; /* 1 columna en celulares chicos */
-    }
-
-    .section-title {
-        font-size: 1.8em;
-    }
+    .hero-name { font-size: 2.5em; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.8em; }
 }
